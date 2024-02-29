@@ -1,0 +1,20 @@
+package ch02.sec01;
+
+public class VariableExchangeExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int x = 3; //변수 x에 3을 저장
+		int y = 5; //변수 y에 5를 저장
+		
+		System.out.println("x : " + x + " y : " + y); //일단 초기화된 변수의 변수값들을 출력
+		
+		int temp = x; //temp변수를 새로 만들어 변수값을 변수x의 값으로 저장함. (변수x의 )
+		x = y; 
+		y = temp;
+		
+		System.out.println("x : " + x + " y : " + y);
+		
+	}
+
+}
