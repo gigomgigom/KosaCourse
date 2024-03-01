@@ -22,7 +22,7 @@ public class Solution7 {
 			
 			System.out.print("번호 입력: ");
 			
-			String num = sc.nextLine();//메뉴번호 입력값 변수
+			String num = sc.nextLine();//메뉴버
 			
 			
 			if(num.equals("1")) {
