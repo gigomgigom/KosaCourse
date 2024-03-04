@@ -7,7 +7,7 @@ public class Sltn9 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		// 추가적으로 해야할 것들 메뉴 번호 선택 후 진입할 시 -> 스캐너 입력값이 숫자인지 문자인지 구분 -> 숫자가 맞다 할지라도 음수 양수 구분
+		//메뉴 번호 선택 후 진입할 시 -> 스캐너 입력값이 숫자인지 문자인지 구분 -> 숫자가 맞다 할지라도 음수 양수 구분
 		
 		Scanner scanner = new Scanner(System.in); //키보드 입력을 위한 Scanner 참조 타입 객체 생성
 		boolean nonInputData = true; //점수가 입력되었는지 아직 입력되지않았는지 확인하기 위한 상태 저장값
@@ -83,7 +83,6 @@ public class Sltn9 {
 					
 					
 					double avg = (double)sum / scores.length; //그렇게 구해진 성적의 합에 학생 인원 수를 나누어 평균값을 구한다.
-					//허나 학생수에 studentCnt 사용하면 안된다. case문에서 break해서 빠져나온후 다시 들어오게 되면 studentCnt값은 0으로 다시 초기화가 된다. (Inifinity예외 발생)
 					
 					System.out.println("최고 점수 : " + max);
 					System.out.println("평균 점수 : " + avg);
