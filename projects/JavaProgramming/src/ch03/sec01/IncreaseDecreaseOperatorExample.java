@@ -20,22 +20,21 @@ public class IncreaseDecreaseOperatorExample {
 		
 		System.out.println("---------------------------------------");
 		
-		z = x++;
+		z = x++; //z값에 x값을 넣은 후 x값을 1 증가시킴. z:12 x:13
 		System.out.println("z= " + z);
 		System.out.println("x= " + x);
 		
 		System.out.println("---------------------------------------");
 		
-		z = ++x;
+		z = ++x; //x값 1증가, z값 x값 대입 z: 14 x: 14
 		System.out.println("z= " + z);
 		System.out.println("x= " + x);
 		
 		System.out.println("---------------------------------------");
 		
-		z = ++x + y++;
+		z = ++x + y++; //우선 x값을 1 증가시키고 y값을 더한 값을 z에 대입한다. 그 후 y값을 1증가시킨다. x:15 z :23 y:9
 		System.out.println("z= " + z);
 		System.out.println("x= " + x);
 		System.out.println("y= " + y);
 	}
-
 }
