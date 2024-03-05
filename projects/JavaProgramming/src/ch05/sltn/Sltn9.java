@@ -24,20 +24,31 @@ public class Sltn9 {
 			System.out.println("--------------------------------------------------");
 			System.out.print("선택 > ");
 			
-			input = scanner.nextLine();
+			input = scanner.nextLine(); //굳이 input변수를 선언해가면서 할 필요가 있나 아니다 switch문 조건문에 들어가는 값이 변하게 되면 안된다.
 			
 			switch(input) { //스캐너객체를 참조하는 변수를 통해 키보드 입력 대기 메소드를 호출한다. 그리고 입력한 값을 switch 조건문에 넣고 case 문자열들과 비교한다.
 				case "1":
 					System.out.print("학생수>");
 					studentCnt = Integer.parseInt(scanner.nextLine()); //입력받은 문자열을 정수형으로 변환시키고 studentCnt 변수의 값에 저장한다.
-					scores = new int[studentCnt]; //studentCnt만큼의 길이를 갖는 배열 객체를 새로 만들어 scores 변수가 이를 참조함.
-					break;
+					if(studentCnt > 0) { //학생수 입력할때 음수 또는 0이 나오지 않게끔 하는 조건문을 작성
+						scores = new int[studentCnt]; //studentCnt만큼의 길이를 갖는 배열 객체를 새로 만들어 scores 변수가 이를 참조함.
+						break;
+					} else {
+						System.out.println("비정상적인 입력입니다. 1이상의 값을 입력해주세요.");
+						break;
+					}
 					
 				case "2":
 					if(scores.length != 0) { //학생수가 입력되지않았을 경우 배열 객체의 초기 길이값인 0이 유지될것이다.(학생수가 0명일 수는 없기 때문에) 이를 이용해서 배열 길이가 0이 아닐경우 점수 입력 기능을 정상 수행하도록함.
 						for(int i = 0; i < scores.length; i++) { //인덱스 0번부터 (배열길이-1)번까지 반복
-							System.out.print("scores["+i+"]"); //입력안내문을 출력하는 코드
-							scores[i] = Integer.parseInt(scanner.nextLine());//입력받은 문자열을 정수형으로 변환하고 배열의 i번째 인덱스에 저장한다.
+							System.out.print("scores["+i+"] : "); //입력안내문을 출력하는 코드
+							int inputNum = Integer.parseInt(scanner.nextLine());
+							if(inputNum >= 0) {
+								scores[i] = inputNum; //입력받은 점수를 배열의 i번째 인덱스에 저장한다.
+							} else {
+								System.out.println("비정상적인 입력입니다. 0이상의 값을 입력해주세요.");
+								i--;
+							}
 						}
 						nonInputData = false; //for문이 종료가 되고 점수입력단계가 완료가 되면 입력이 완료되었다는 상태를 알려주는 nonInputData를 false로 변경한다.
 						break;						
