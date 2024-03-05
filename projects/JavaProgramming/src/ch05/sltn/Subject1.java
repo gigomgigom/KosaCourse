@@ -11,9 +11,9 @@ public class Subject1 {
 		String[][] contents = new String[100][4];
 		boolean loopFlag = true;
 		int finalNum = 0;
-		String searchNum = "";
 		
 		while (loopFlag) {
+			int contentCnt = 0;
 			System.out.println("--------------------------------------------------------");
 			System.out.println("번호\t제목\t\t\t\t글쓴이");
 			System.out.println("--------------------------------------------------------");
@@ -22,6 +22,7 @@ public class Subject1 {
 			for(int i = 0; i < contents.length; i++) {
 				if(contents[i][0] != null) {
 					System.out.println(contents[i][0]+"\t"+contents[i][1]+"\t\t\t\t"+contents[i][2]);
+					contentCnt++;
 				}
 			}
 			
@@ -33,7 +34,6 @@ public class Subject1 {
 			
 			switch(inputMenuCode) {
 				case "1":
-					String inputContent = "";
 					
 					int lowestEmptyIndex = 0; //자리가 있는 최소인덱스번호찾기
 					for(int i = 0; i < contents.length; i++) {
@@ -52,22 +52,27 @@ public class Subject1 {
 					
 					finalNum++; //1
 					contents[lowestEmptyIndex][0] = String.valueOf(finalNum);
+					
+					System.out.println(lowestEmptyIndex);
+					
+					//----------------------------------------------
+					
+					//-----------------------------------------------
 					break;
 					
 					
 				case "2":
 					System.out.print("\n게시물번호 : ");
-					searchNum = sc.nextLine();
+					String searchNum = sc.nextLine();
 					for(int i = 0; i < contents.length; i++) {
-						if(contents[i][0].equals(searchNum)) {
-							System.out.println("[글 보기]");
-							System.out.println("제목 : " + contents[i][1]);
-							System.out.println("글쓴이 : " + contents[i][2]);
-							System.out.println("내용 : " + contents[i][3]);
-							i = contents.length; //for 루프 탈출
-						} else { 
-							System.out.println("존재하지 않는 게시물 번호입니다.");
-							i = contents.length;
+						if(contents[i][0] != null) {
+							if(contents[i][0].equals(searchNum)) {
+								System.out.println("[글 보기]");
+								System.out.println("제목 : " + contents[i][1]);
+								System.out.println("글쓴이 : " + contents[i][2]);
+								System.out.println("내용 : " + contents[i][3]);
+								i = contents.length; //for 루프 탈출
+							}
 						}
 					}
 					break;
@@ -76,18 +81,19 @@ public class Subject1 {
 					
 				case "3":
 					System.out.print("\n게시물번호 : ");
-					searchNum = sc.nextLine();
+					String editNum = sc.nextLine();
 					for(int i = 0; i < contents.length; i++) {
-						if(contents[i][0].equals(searchNum)) {
-							System.out.println("[글 수정]");
-							System.out.print("수정할 제목 : ");
-							contents[i][1] = sc.nextLine();							
-							System.out.print("수정할 내용 : ");
-							contents[i][3] = sc.nextLine();		
-							i = contents.length; //for 루프 탈출
-						} else { 
-							System.out.println("존재하지 않는 게시물 번호입니다.");
-							i = contents.length;
+						if(contents[i][0] != null) {
+							if(contents[i][0].equals(editNum)) {
+								System.out.println("[글 수정]");
+								System.out.print("수정할 제목 : ");
+								contents[i][1] = sc.nextLine();							
+								System.out.print("수정할 내용 : ");
+								contents[i][3] = sc.nextLine();		
+								i = contents.length; //for 루프 탈출
+							} else {
+								
+							}
 						}
 					}
 					break;
@@ -96,17 +102,19 @@ public class Subject1 {
 					
 				case "4":
 					System.out.print("\n게시물번호 : ");
-					searchNum = sc.nextLine();
+					String deleteNum = sc.nextLine();
 					for(int i = 0; i < contents.length; i++) {
-						if(contents[i][0].equals(searchNum)) {
-							for(int j = 0; j < contents[i].length; j++) {
-								contents[i][j] = null;
+						if(contents[i][0] != null) { //nullpointer 예외 발생 이 문장 꼭 넣어야함.
+							if(contents[i][0].equals(deleteNum)) {									
+								
+								for(int j = 0; j < contents[i].length; j++) {
+									contents[i][j] = null;
+								}
+								i = contents.length;
 							}
-							i = contents.length; //for 루프 탈출
-						} else { 
-							System.out.println("존재하지 않는 게시물 번호입니다.");
-							i = contents.length;
 						}
+						
+						
 					}
 					break;
 					
