@@ -7,7 +7,7 @@ public class Sltn9 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		// 추가적으로 해야할 것들 메뉴 번호 선택 후 진입할 시 -> 스캐너 입력값이 숫자인지 문자인지 구분 -> 숫자가 맞다 할지라도 음수 양수 구분
+		// 추가적으로 해야할 것들 메뉴 번호 선택 후 진입할 시 -> 스캐너 입력값이 숫자인지 문자인지 구분(이건 아직 교육진도에 맞지 않아 불가능) -> 숫자가 맞다 할지라도 음수 양수 구분
 		
 		Scanner scanner = new Scanner(System.in); //키보드 입력을 위한 Scanner 참조 타입 객체 생성
 		boolean nonInputData = true; //점수가 입력되었는지 아직 입력되지않았는지 확인하기 위한 상태 저장값
@@ -43,11 +43,11 @@ public class Sltn9 {
 						for(int i = 0; i < scores.length; i++) { //인덱스 0번부터 (배열길이-1)번까지 반복
 							System.out.print("scores["+i+"] : "); //입력안내문을 출력하는 코드
 							int inputNum = Integer.parseInt(scanner.nextLine());
-							if(inputNum >= 0) {
+							if(inputNum >= 0 && inputNum <= 100) {
 								scores[i] = inputNum; //입력받은 점수를 배열의 i번째 인덱스에 저장한다.
 							} else {
-								System.out.println("비정상적인 입력입니다. 0이상의 값을 입력해주세요.");
-								i--;
+								System.out.println("비정상적인 입력입니다. 0 ~ 100 사이의 점수를 입력해주세요.");
+								i--; //i번째 학생의 점수를 다시 입력할 수 있도록 카운트를 1을 낮춰 다시 되돌림.
 							}
 						}
 						nonInputData = false; //for문이 종료가 되고 점수입력단계가 완료가 되면 입력이 완료되었다는 상태를 알려주는 nonInputData를 false로 변경한다.
