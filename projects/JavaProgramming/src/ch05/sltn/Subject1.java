@@ -8,8 +8,9 @@ public class Subject1 {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		String[][] contents = new String[100][4]; //문제에서 주어진 조건에 맞는 2차원 배열 생성
+		String[][] contents = new String[4][4]; //문제에서 주어진 조건에 맞는 2차원 배열 생성
 		boolean loopFlag = true; //반복문 작동상태를 나타내는 변수
+		boolean isFullFlag = false;
 		int finalNum = 0; //새로 생성할때 사용할 차기 게시글 번호를 저장하는 변수
 		
 		while (loopFlag) {
@@ -51,6 +52,10 @@ public class Subject1 {
                     }
                 }
             }
+            
+            if(valueNumberArray.length == contents.length) {
+            	isFullFlag = true;
+            }
             //계속 새로운 배열 객체를 생성하는 이유 -> 생성 or 삭제를 하게 되면 게시글수 바뀜 그러나 배열은 길이가 고정되어있어서 매번 다른 길이의
 
             System.out.println("--------------------------------------------------------");
@@ -86,31 +91,37 @@ public class Subject1 {
 			
 			switch(inputMenuCode) {
 				case "1":
-					
-					int lowestEmptyIndex = 0; //자리가 있는 최소인덱스번호찾기
-					for(int i = 0; i < contents.length; i++) {
-						if(contents[i][0] == null) {
-							lowestEmptyIndex = i;
-							i = contents.length;
+					if(!isFullFlag) {
+						int lowestEmptyIndex = 0; //자리가 있는 최소인덱스번호찾기
+						for(int i = 0; i < contents.length; i++) {
+							if(contents[i][0] == null) {
+								lowestEmptyIndex = i;
+								i = contents.length;
+							}
 						}
+						System.out.println("[새글쓰기]");
+						System.out.print("제목 : ");
+						contents[lowestEmptyIndex][1] = sc.nextLine();
+						System.out.print("글쓴이 : ");
+						contents[lowestEmptyIndex][2] = sc.nextLine();
+						System.out.print("내용 : ");
+						contents[lowestEmptyIndex][3] = sc.nextLine();
+						
+						finalNum++; //1
+						contents[lowestEmptyIndex][0] = String.valueOf(finalNum);
+						break;
+					} else {
+						System.out.println("게시글 저장할 수 있는 저장공간 초과! 게시글을 삭제해주세요!");
+						break;
 					}
-					System.out.println("[새글쓰기]");
-					System.out.print("제목 : ");
-					contents[lowestEmptyIndex][1] = sc.nextLine();
-					System.out.print("글쓴이 : ");
-					contents[lowestEmptyIndex][2] = sc.nextLine();
-					System.out.print("내용 : ");
-					contents[lowestEmptyIndex][3] = sc.nextLine();
 					
-					finalNum++; //1
-					contents[lowestEmptyIndex][0] = String.valueOf(finalNum);
+					
 					
 					//System.out.println(lowestEmptyIndex);  //어디에 저장되었는지 확인
 					
 					//----------------------------------------------
 					
 					//-----------------------------------------------
-					break;
 					
 					
 				case "2":
