@@ -10,11 +10,12 @@ public class Subject1 {
 		
 		String[][] contents = new String[4][4]; //문제에서 주어진 조건에 맞는 2차원 배열 생성
 		boolean loopFlag = true; //반복문 작동상태를 나타내는 변수
-		boolean isFullFlag = false;
+
 		int finalNum = 0; //새로 생성할때 사용할 차기 게시글 번호를 저장하는 변수
 		
 		while (loopFlag) {
 
+			//유현주 < Null값을 가지지 않는 갯수를 계산하는 코드를 만들었었네요 이 변수를 contents배열의 길이와 비교해서 저장공간 초과여부를 결정해보도록 하죠.
             int notNullCnt = 0; //content가 참조하는 배열객체 요소들중에 참조하는 값이 Null이 아닌 요소들의 갯수를 저장할 변수 선언, 초기값 0세팅 
             
             for(int i = 0; i < contents.length; i++) { //Null 값이 아닌 배열객체의 갯수를 계산하는 코드
@@ -52,10 +53,7 @@ public class Subject1 {
                     }
                 }
             }
-            
-            if(valueNumberArray.length == contents.length) {
-            	isFullFlag = true;
-            }
+
             //계속 새로운 배열 객체를 생성하는 이유 -> 생성 or 삭제를 하게 되면 게시글수 바뀜 그러나 배열은 길이가 고정되어있어서 매번 다른 길이의
 
             System.out.println("--------------------------------------------------------");
@@ -91,7 +89,7 @@ public class Subject1 {
 			
 			switch(inputMenuCode) {
 				case "1":
-					if(!isFullFlag) {
+					if(notNullCnt < contents.length) { //유현주 < 게시글의 갯수가 배열의 저장공간보다 적다면. 생성 작업 실행
 						int lowestEmptyIndex = 0; //자리가 있는 최소인덱스번호찾기
 						for(int i = 0; i < contents.length; i++) {
 							if(contents[i][0] == null) {
@@ -110,7 +108,7 @@ public class Subject1 {
 						finalNum++; //1
 						contents[lowestEmptyIndex][0] = String.valueOf(finalNum);
 						break;
-					} else {
+					} else { //유현주 < 게시글의 갯수가 배열의 저장공간보다 같거나 커진다면. 생성 작업 취소 후 메뉴로 되돌아감.
 						System.out.println("게시글 저장할 수 있는 저장공간 초과! 게시글을 삭제해주세요!");
 						break;
 					}
