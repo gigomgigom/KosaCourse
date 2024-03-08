@@ -30,6 +30,7 @@ public class NoticeBoard {
 			boardManager(input);
 		}
 	}
+	
 	public void showIndex() {
 		System.out.println("--------------------------------------------------------");
         System.out.println("\t게시글 번호와 인덱스 순서 확인");
@@ -46,6 +47,7 @@ public class NoticeBoard {
         System.out.println();
         System.out.println("--------------------------------------------------------");
 	}
+	
 	public void showContents() {
 		System.out.println("--------------------------------------------------------");
 		System.out.println("번호\t제목\t\t\t\t글쓴이");
@@ -58,6 +60,7 @@ public class NoticeBoard {
 			//System.out.println("--------------------------------------------------------");
 		}
 	}
+	
 	public String showMenu() {		
 		System.out.println("메뉴 : 1. 생성 | 2. 보기 | 3. 수정 | 4. 삭제 | 5. 종료");
 		System.out.print("선택: ");
@@ -65,6 +68,7 @@ public class NoticeBoard {
 		String inputMenuCode = sc.nextLine(); //메뉴번호입력
 		return inputMenuCode;
 	}
+	
 	public void boardManager(String menuCode) {
 		switch(menuCode) {
 			case "1":
@@ -92,6 +96,7 @@ public class NoticeBoard {
 				break;
 		}
 	}
+	
 	public void createContent() {
 		int lowestEmptyIndex = 0; //자리가 있는 최소인덱스번호찾기
 		for(int i = 0; i < contentArr.length; i++) {
@@ -125,6 +130,7 @@ public class NoticeBoard {
 			}
 		}
 	}
+	
 	public void editContent(String searchNum) {
 		for(int i = 0; i < contentArr.length; i++) {
 			if(contentArr[i][0] != null) {
@@ -141,6 +147,7 @@ public class NoticeBoard {
 			}
 		}
 	}
+	
 	public void deleteContent(String searchNum) {
 		for(int i = 0; i < contentArr.length; i++) {
 			if(contentArr[i][0] != null) { 
@@ -156,9 +163,11 @@ public class NoticeBoard {
 			
 		}
 	}
+	
 	public void terminateProgram() {
 		loopFlag = false;
 	}
+	
 	public int getNotNullCnt() {
 		int notNullCnt = 0;
 		
@@ -169,6 +178,7 @@ public class NoticeBoard {
 		}
 		return notNullCnt;
 	}
+	
 	public void sortArray() {
 		for (int i = 0; i < valueNumber.length - 1; i++) {
             for (int j = i + 1; j < valueNumber.length; j++) {
@@ -186,6 +196,7 @@ public class NoticeBoard {
             }
         }
 	}
+	
 	public void createArr() {
 		int cnt = getNotNullCnt();
 		valueNumber = new int[cnt];
@@ -200,6 +211,7 @@ public class NoticeBoard {
             }
         }
 	}
+	
 	public String searchContent() {
 		System.out.print("\n게시물번호 : ");
 		String searchNum = sc.nextLine();
