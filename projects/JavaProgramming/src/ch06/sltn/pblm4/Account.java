@@ -10,9 +10,11 @@ public class Account {
 	static final int MAX_BALANCE = 1000000;
 	
 	Account(int balance, String name, String accNum) { //객체 생성할때 객체 안의 필드값들을 초기화하는 생성자.
-		this.balance = balance;
 		this.name = name;
 		this.accNum = accNum;
+		if(balance <= MAX_BALANCE || MIN_BALANCE >= 0) {
+			this.balance = balance;
+		}
 	}
 	
 	public int getBalance() { //선택한 객체(계좌)에 존재하는 잔액을 리턴
@@ -20,7 +22,7 @@ public class Account {
 	}
 	
 	public void setBalance(int balance) { //선택한 객체(계좌)의 잔액 필드값을 수정한다.
-			this.balance += balance;
+		this.balance += balance;
 	}
 
 	public String getName() { //선택한 객체(계좌)에 존재하는 계좌주이름을 리턴.

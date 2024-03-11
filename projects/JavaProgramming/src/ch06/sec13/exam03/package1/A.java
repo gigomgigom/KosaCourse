@@ -5,6 +5,7 @@ public class A {
 	public int field1;
 	int field2;
 	private int field3;
+	public String field;
 	
 	// 생성자 선언 
 	public A() {
