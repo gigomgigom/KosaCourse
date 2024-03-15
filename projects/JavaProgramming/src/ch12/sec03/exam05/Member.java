@@ -1,6 +1,6 @@
 package ch12.sec03.exam05;
 
-import lombok.*;
+import lombok.Data;
 
 @Data
 public class Member {
