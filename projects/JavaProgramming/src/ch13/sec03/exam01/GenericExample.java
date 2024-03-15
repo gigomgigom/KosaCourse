@@ -12,6 +12,8 @@ public class GenericExample {
 		System.out.println(box1.getT());
 		Box<Integer> box2 = boxing(100);
 		System.out.println(box2.getT());
+
+		
 	}
 
 }
