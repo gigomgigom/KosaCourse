@@ -13,5 +13,4 @@ public class ArrayCopyExample {
 			System.out.println("newArray["+i+"] = " + newArray[i]);
 		}
 	}
-
 }
