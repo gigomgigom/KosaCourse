@@ -59,18 +59,18 @@ public class Bj2493 {
 					break;
 					//값을 찾았으니 while탈출!
 				}
-				laserDetect.pop();
+				laserDetect.pop();//앞에 대조한 결과가 false가 나온다면 스택에 존재하는 객체 데이터를 pop한다.
 			}
 			
-			if(laserDetect.empty()) {
+			if(laserDetect.empty()) { //처음에 입력받은 타워이거나 while문 내부의 if조건식이 false가 나온다면 0의 값을 도출
 				sb.append(0 + " ");
 			}
 			
-			laserDetect.push(towerArray[i]);
+			laserDetect.push(towerArray[i]); //배열에서 입력받은 객체 데이터를 다음 데이터와 비교하기 위해 스택에 푸쉬한다.
 		}
 		
 		
-		System.out.println(sb);
+		System.out.println(sb); // 반복문이 종료가 되면 StringBuilder에서 완성된 문자열을 출력한다.
 	
 		
 		
