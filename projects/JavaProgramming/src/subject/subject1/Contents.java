@@ -1,4 +1,4 @@
-package sltn.subject1;
+package subject.subject1;
 
 public class Contents {
 	String[][] boardContents = new String[100][4];
