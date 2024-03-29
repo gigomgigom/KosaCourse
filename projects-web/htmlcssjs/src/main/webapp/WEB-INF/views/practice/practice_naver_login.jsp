@@ -5,21 +5,26 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="icon" type= "image/jpg" href="/htmlcssjs/resources/image/naverlogo.jpg">
-		<!-- Latest compiled and minified CSS -->
-		<!-- 클라이언트에게 라이브러리 파일을 어디 서버에 다운받을 지 배정받는다. -->
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-		<!-- Latest compiled JavaScript -->
-		<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+		<link rel="stylesheet" href="/htmlcssjs/resources/css/practice_naver_login.css">
 		
 		<title>Naver Login</title>
 	</head>
 	<body>
-	<p>
-		<img src = "/htmlcssjs/resources/image/navertext.jpg"  alt="Pineapple"
-		width="150">
-	</p>
+		<div id="wrapper">
+			<div id="logo">
+				<img src = "/htmlcssjs/resources/image/navertext.jpg"  alt="Pineapple"
+				width="300">
+			</div>
+			
+			<div>
+				<form>
+					
+				</form>
+			</div>
+		</div>
+		
+		
+		
 		
 		
 	</body>
