@@ -22,7 +22,7 @@
 			var var2 = "abc"; //String
 			var var3 = () => {}; //Function
 			var var4 = {}; //object
-			var var5 = []; //object
+			var var5 = []; //object(배열)
 			console.log("var1의 타입 : ", typeof(var1));
 			console.log("var2의 타입 : ", typeof(var2));
 			console.log("var3의 타입 : ", typeof(var3));
@@ -39,6 +39,7 @@
 			console.log(car.company);
 			console.log(car.name);
 			console.log(car.price);
+			//속성의 이름을 변수(문자열)로 받아올 경우에 사용하는 방법이다.
 			console.log(car["company"]);
 			console.log(car["name"]);
 			console.log(car["price"]);

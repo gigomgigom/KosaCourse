@@ -25,6 +25,19 @@
 				<li><a href="javascript/exam03_operations">exam03_operations</a></li>
 				<li><a href="javascript/exam04_function">exam04_function</a></li>
 				<li><a href="javascript/exam05_object">exam05_object</a></li>
+				<li><a href="javascript/exam06_object_dynamic_field">exam06_object_dynamic_field</a></li>
+				<li><a href="javascript/exam07_getter_setter">exam07_getter_setter</a></li>
+				<li><a href="javascript/exam08_function_constructor">exam08_function_constructor</a></li>
+				<li><a href="javascript/exam09_class">exam09_class</a></li>
+				<li><a href="javascript/exam10_static">exam10_static</a></li>
+				<li><a href="javascript/exam11_inheritance">exam11_inheritance</a></li>
+				<li><a href="javascript/exam12_destructuring_assignment">exam12_destructuring_assignment</a></li>
+				<li><a href="javascript/exam13_string">exam13_string</a></li>
+				<li><a href="javascript/exam14_date">exam14_date</a></li>
+				<li><a href="javascript/exam15_math">exam15_math</a></li>
+				<li><a href="javascript/exam16_global_fun">exam16_global_fun</a></li>
+				<li><a href="javascript/exam17_json">exam17_json</a></li>
+				<li><a href="javascript/exam18_regular_expression">exam18_regular_expression</a></li>
 			</ul>
 		</div>
 	</div>
